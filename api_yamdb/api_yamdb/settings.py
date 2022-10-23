@@ -8,7 +8,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'p&l%385148kslhtyn^##a1)ilz@4zqj=rq&agdol^##zgl9(vs'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False #True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -63,16 +63,6 @@ WSGI_APPLICATION = 'api_yamdb.wsgi.application'
 
 # Database
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': os.getenv('DB_ENGINE', default=None),
-#         'NAME': os.getenv('DB_NAME', default=None),
-#         'USER': os.getenv('POSTGRES_USER', default=None),
-#         'PASSWORD': os.getenv('POSTGRES_PASSWORD', default=None),
-#         'HOST': os.getenv('DB_HOST', default=None),
-#         'PORT': os.getenv('DB_PORT', default=None)
-#     }
-# }
 DATABASES = {
     'default': {
         'ENGINE': os.getenv('DB_ENGINE', default='django.db.backends.postgresql'),
@@ -119,12 +109,11 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static/'),)
-
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media') 
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Default auto field is added since Django is complaining about it whilst migrating
 
